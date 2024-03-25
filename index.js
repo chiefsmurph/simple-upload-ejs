@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.use(express.static('public'));
+app.use(express.static('uploads'));
 app.set('view engine', 'ejs');
 
 // Serve the single page app

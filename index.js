@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
             const stats = fs.statSync(path.join(uploadsDir, file));
             return {
                 name: file,
-                url: `/uploads/\${file}`,
+                url: `/uploads/${file}`,
                 uploaded: new Date(stats.mtime).toLocaleString(),
                 age: ((Date.now() - stats.mtime) / 1000 / 60).toFixed(2) + ' minutes ago'
             };

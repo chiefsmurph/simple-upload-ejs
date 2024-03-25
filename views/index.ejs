@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple File Upload</title>
+</head>
+<body>
+    <h1>Upload Files</h1>
+    <form action="/upload?password=jamieissexy" method="post" enctype="multipart/form-data">
+        <input type="file" name="files" multiple required>
+        <button type="submit">Upload</button>
+    </form>
+    <h2>Uploaded Files</h2>
+    <ul>
+        <% files.forEach(function(file) { %>
+            <li><a href="<%= file.url %>"><%= file.name %></a> - <%= file.uploaded %> (<%= file.age %>)</li>
+        <% }); %>
+    </ul>
+</body>
+</html>
